@@ -8,13 +8,13 @@ int main () {
 	int n;
 	cout << "Enter a number from 1 to 100 \n";
 	cin >> n;
-	if (n == num){
+	if (n == num) {
 		cout << "You are right! \n" ;
 	} else {
 		do {
-			if (n < num){
+			if (n < num) {
 				cout << "Enter a larger number." << endl;
-			}else{
+			} else {
 				cout << "Enter a smaller number." << endl;
 			}
 			cin >> n;
