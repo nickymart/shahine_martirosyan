@@ -8,7 +8,7 @@ int main () {
         cin >> a >> b;
         double p = (a + b) * 2;
         double s = a * b;
-        cout << "The Perimeter is " << p << endl;
-        cout << "The Area is " << s << endl;
+        cout << "The Perimeter is " << p << "." << endl;
+        cout << "The Area is " << s << "." << endl;
         return 0;
 }
