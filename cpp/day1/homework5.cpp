@@ -4,7 +4,7 @@ using namespace std;
 int main () {
         double a;
         double b;
-        cout << "Enter edges of rectangle:" << endl;
+        cout << "Enter the sides of rectangle." << endl;
         cin >> a >> b;
         double p = (a + b) * 2;
         double s = a * b;
