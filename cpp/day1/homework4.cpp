@@ -3,13 +3,13 @@ using namespace std;
 
 int main () {
         int chickens;
-        cout << "Enter chickens count" << endl;
+        cout << "Enter the number of chickens" << endl;
         cin >> chickens;
         int cows;
-        cout << "Enter cows count" << endl;
+        cout << "Enter the number of cows" << endl;
         cin >> cows;
         int pigs;
-        cout << "Enter pigs count" << endl;
+        cout << "Enter the number of pigs" << endl;
         cin >> pigs;
         int result = 2 * chickens + 4 * cows + 4 * pigs;
         cout << "The result is : " << result << endl;
