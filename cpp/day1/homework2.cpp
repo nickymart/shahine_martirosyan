@@ -6,9 +6,9 @@ int main () {
         cout << "Enter your number:" << endl;
         cin >> n;
         int i = 1;
-        while (i <= 10){
+        while (i <= 10) {
             cout << n << " * " << i << " = " << n * i << endl;
-            i++;
+            i ++;
         }
         return 0;
 }
