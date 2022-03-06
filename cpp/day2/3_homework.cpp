@@ -4,13 +4,10 @@ using namespace std;
 int main() 
 {
     char character;
-    cout << "Input alphabet:";
-    cin >> character;
-    while (! ( ( character >= 'a' && character <= 'z' ) || ( character >= 'A' && character <= 'Z' ) ) )
-    {
+    do {
         cout << "Input letter:";
         cin >> character;
-    }
+    } while (! ( ( character >= 'a' && character <= 'z' ) || ( character >= 'A' && character <= 'Z' ) ) );
     switch (character) 
     {
         case 'a':
