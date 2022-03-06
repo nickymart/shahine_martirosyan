@@ -3,7 +3,6 @@ using namespace std;
 int main() {
     int month;
     cout << "Input month number (1-12):";
-    
     cin >> month;
     switch (month) {
         case 1:
