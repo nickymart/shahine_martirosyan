@@ -12,8 +12,7 @@ int main()
     cin >> operatorr;
     cout << "Input number 2:";
     cin >> num2;
-    switch (operatorr) 
-    {
+    switch (operatorr) {
         case '+':
             cout << num1 + num2;
             break;
@@ -24,8 +23,7 @@ int main()
             cout << num1 * num2;
             break;
         case '/':
-            if (!num2) 
-            {
+            if (!num2) {
                 cout << "Cannot divide by zero" << endl;
             } else {
                 cout << num1 / num2;    
