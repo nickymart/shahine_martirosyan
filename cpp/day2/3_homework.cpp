@@ -1,42 +1,31 @@
 #include <iostream>
 using namespace std;
-int main() {
+
+int main() 
+{
     char character;
-    cout << "Input alphabet:";
-    cin >> character;
-    switch (character) {
+    do {
+        cout << "Input letter:";
+        cin >> character;
+    } while (! ( ( character >= 'a' && character <= 'z' ) || ( character >= 'A' && character <= 'Z' ) ) );
+    switch (character) 
+    {
         case 'a':
         case 'e':
         case 'i':
         case 'o':
         case 'u':
         case 'y':
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
+        case 'Y':
             cout << "'" << character << "'" << "is vowels" << endl;
             break;
-        case 'b':
-        case 'c':
-        case 'd':
-        case 'f':
-        case 'g':
-        case 'h':
-        case 'j':
-        case 'k':
-        case 'l':
-        case 'm':
-        case 'n':
-        case 'p':
-        case 'q':
-        case 'r':
-        case 's':
-        case 't':
-        case 'v':
-        case 'w':
-        case 'x':
-        case 'z':
-            cout << "'" << character << "' is consonants" << endl;
-            break;
         default :
-            cout << "Error!" << endl;
+            cout << "'" << character << "' is consonants" << endl;
             break;
     }
     return 0;
