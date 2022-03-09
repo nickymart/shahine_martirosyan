@@ -6,8 +6,7 @@ void tree2(int);
 void tree3(int);
 void tree4(int);
 void tree5(int);
-int main()
-{
+int main() {
     int size;
     cout << "Input a number:";
     cin >> size;
