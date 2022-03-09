@@ -6,7 +6,7 @@ void print(int arr[], int);
 void input(int arr[], int);
 int main() {
     int n;
-    cout << "Input array lenght" <<endl;
+    cout << "Input array lenght:";
     cin >> n;
 	int arr[n];
 	input(arr, n);
@@ -31,6 +31,5 @@ void print(int arr[], int n) {
 }
 void input(int arr[], int n) {
     for ( int i = 0; i < n; i++)
-        arr[i] = rand() % 100;;
-    cout << endl;
+        arr[i] = rand() % 100;
 }
