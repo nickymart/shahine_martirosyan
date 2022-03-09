@@ -6,6 +6,7 @@ int main () {
     cout << "Input month number (1-12):";
     cin >> month;
     total_number(month);
+    return 0;
 }
 void total_number (int month){
     switch (month) {
