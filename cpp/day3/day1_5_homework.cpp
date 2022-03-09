@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-double area (int, int);
-double perimeter (int, int);
+double area (double, double);
+double perimeter (double, double);
 int main () {
     double a;
     double b;
