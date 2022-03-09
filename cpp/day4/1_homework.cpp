@@ -15,7 +15,7 @@ int main() {
 int binary(int n) {
     int result = 0;
     int i = 0;
-    while(n){
+    while(n) {
         result += (n % 2) * pow(10, i);
         n /= 2;
         i ++;
