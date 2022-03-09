@@ -4,24 +4,22 @@ using namespace std;
 void sort(int arr[], int);
 void print(int arr[], int);
 void input(int arr[], int);
-int main()
-{
+int main() {
     int n;
     cout << "Input array lenght" <<endl;
     cin >> n;
 	int arr[n];
 	input(arr, n);
-	print(arr,n);
+	print(arr, n);
 	sort(arr, n);
-	print(arr,n);
+	print(arr, n);
 	return 0;
 }
 
-void sort(int arr[], int n)
-{   
+void sort(int arr[], int n) {   
     int temp;
-	 for (int i = 0; i < n; i++) {
-        for (int j = 1 + i; j < n; j++) {
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
             if (arr[i] > arr[j]) {
                 temp = arr[i];
                 arr[i] = arr[j];
