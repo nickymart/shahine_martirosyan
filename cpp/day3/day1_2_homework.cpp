@@ -3,8 +3,10 @@ using namespace std;
 void multiplication_table (int n);
 int main () {
     int n;
-    cout << "Enter your number:";
-    cin >> n;
+    do {
+        cout << "Enter your number:";
+        cin >> n;
+    } while(n <= 0 || n >=11);
     multiplication_table(n);
     return 0;    
 }
