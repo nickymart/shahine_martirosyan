@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-int area (int, int);
-int perimeter (int, int);
+double area (int, int);
+double perimeter (int, int);
 int main () {
     double a;
     double b;
@@ -13,9 +13,9 @@ int main () {
     cout << "The Area is " << s << "." << endl;
     return 0;
 }
-int area (int a, int b){
+double area (double a, double b){
     return  a * b;
 }
-int perimeter(int a, int b){
+double perimeter(double a, double b){
     return (a + b) * 2;
 }
