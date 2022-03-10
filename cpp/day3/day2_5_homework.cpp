@@ -1,16 +1,23 @@
 #include <iostream>
 using namespace std;
 
-void tree(int);
-int main()
-{
+void tree1(int);
+void tree2(int);
+void tree3(int);
+void tree4(int);
+void tree5(int);
+int main() {
     int size;
     cout << "Input a number:";
     cin >> size;
-    tree(size);
+    tree1(size);
+    tree2(size);
+    tree3(size);
+    tree4(size);
+    tree5(size);
     return 0;
 }
-void tree(int size) {
+void tree1(int size) {
     int i = 1;
     while (i <= size) {
         int j = 1;
@@ -22,7 +29,9 @@ void tree(int size) {
         i ++;
     }
     cout << endl;
-    i = 1;
+}
+void tree2(int size) {
+    int i = 1;
     while (i <= size) {
         int j = 1;
         while (j <= size) {
@@ -37,7 +46,9 @@ void tree(int size) {
         i ++;
     }
     cout << endl;
-    i = 1;
+}
+void tree3(int size) {
+    int i = 1;
     while (i <= size) {
         int j = 1;
         while (j <= size - i + 1) {
@@ -48,7 +59,9 @@ void tree(int size) {
         i ++;
     }
     cout << endl;
-    i = 1;
+}
+void tree4(int size) {
+    int i = 1;
     while (i <= size) {
         int j = 1;
         while (j <= size) {
@@ -63,7 +76,9 @@ void tree(int size) {
         i ++;
     }
     cout << endl;
-    i = 1;
+}
+void tree5(int size) {
+    int i = 1;
     while (i <= size) {
         int j = 1;
         while (j <= 2 * size) {

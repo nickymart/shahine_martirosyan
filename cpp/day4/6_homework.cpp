@@ -2,9 +2,9 @@
 #include <string>
 using namespace std;
 
-char to_lower(char c);
-bool is_polindrom(string word);
-int main(){
+char to_lower(char);
+bool is_polindrom(string);
+int main() {
     string word;
     cout << "Input:";
     cin >> word;
@@ -21,7 +21,7 @@ bool is_polindrom(string word) {
     }   
     return 1;
 }
-char to_lower(char c){
+char to_lower(char c) {
     if (c >= 'A' && c <= 'Z')
         return c + 'a' - 'A';
     return c;
