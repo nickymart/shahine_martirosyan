@@ -8,7 +8,7 @@ int main()
     int sum[8] = {0};
     for ( int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            cin >> matrix[i][j];
+            matrix[i][j] = rand() % 10;
             //Above the second diagonal
             if (j < (n - i - 1)) {
                 sum[0] += matrix[i][j];
