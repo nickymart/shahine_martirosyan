@@ -19,7 +19,7 @@ int main()
         }
         word += line[i];
     }
-    cout << count;
+    cout << count << endl;
     return 0;
 }
 bool is_two_b(string word){
