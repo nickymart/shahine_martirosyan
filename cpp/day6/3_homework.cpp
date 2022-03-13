@@ -3,12 +3,18 @@ using namespace std;
 
 int main () {
     int arr[10] = {0};
-    int i = 0;
-    for (int k = 1; i < 10; k ++) {
-        if ((1 +  k * k) % 5 == 0) {
-            arr[i] = 1 +  k * k;
-            cout << arr[i] << " ";
-            i++;
+    int e = 0;
+    for (int k = 5; e < 10; k += 5) {
+        //cout << k << " ";
+        for(int i = 1; i < k; i ++){
+            
+            for(int j = i + 1; j < k; j ++){
+                if(k * k == j * j + i * i){
+                    arr[e] = j * j + i * i;
+                    cout << i * i << "+" << j * j << "=" << arr[e] << endl;
+                    e ++;
+                }
+            }
         }
     }
     cout << endl;
