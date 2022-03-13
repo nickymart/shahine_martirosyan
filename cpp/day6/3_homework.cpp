@@ -1,22 +1,12 @@
 #include <iostream>
-using namespace std;
+#include <math.h>
 
+using namespace std;
 int main () {
     int arr[10] = {0};
-    int e = 0;
-    for (int k = 5; e < 10; k += 5) {
-        //cout << k << " ";
-        for(int i = 1; i < k; i ++){
-            
-            for(int j = i + 1; j < k; j ++){
-                if(k * k == j * j + i * i){
-                    arr[e] = j * j + i * i;
-                    cout << i * i << "+" << j * j << "=" << arr[e] << endl;
-                    e ++;
-                }
-            }
-        }
+    for (int i = 0; i < 10; i++) {
+        arr[i] = 5 * pow(i + 1, 2);
+        cout << 2 * (i + 1) << "*" <<2 * (i + 1)  << " + " << (i + 1) << "*"  << (i + 1)<< " = " << arr[i] << endl;
     }
-    cout << endl;
     return 0;    
 }
