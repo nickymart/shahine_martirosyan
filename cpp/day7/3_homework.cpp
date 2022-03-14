@@ -14,7 +14,7 @@ int main() {
     int s = 0;
     int *sum = &s;
     sum_of_array_elements(arr, n, sum);
-    cout << *sum << endl;
+    cout << "sum:"<< *sum << endl;
     return 0;
 }
 void sum_of_array_elements (int arr[], int n, int *sum) {
