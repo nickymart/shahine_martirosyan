@@ -2,12 +2,11 @@
 using namespace std;
 
 void findMinAndMaxElementsOfArray(int arr[], int n, int *min, int *max);
-int main()
-{
+int main() {
     const int n = 10;
     int arr[n];
     cout << "Input:\n";
-    for(int i = 0; i < n; i ++){
+    for (int i = 0; i < n; i ++) {
         arr[i] = rand() % 9 + 1;
         cout << arr[i] << " ";
     }
@@ -18,15 +17,15 @@ int main()
     cout << "min:"<< *min << " \n" <<"max:" << *max << endl;
     return 0;
 }
-void findMinAndMaxElementsOfArray(int arr[], int n, int *min, int *max){
+void findMinAndMaxElementsOfArray (int arr[], int n, int *min, int *max) {
     int *next = arr + n - 1;
     *min = *next;
     *max = *next;
-    while(next > arr - 1){
-        if(*min > *next){
+    while (next > arr - 1) {
+        if (*min > *next) {
             *min = *next;
         }
-        if(*max < *next){
+        if (*max < *next) {
             *max = *next;    
         }
         next --;
