@@ -7,8 +7,7 @@ void sum3(int a, int b, int &sum);
 void sum4(int a, int *b, int &sum);
 void sum5(int *a, int *b, int &sum);
 
-int main()
-{
+int main() {
     int  num1, num2;
     cout << "Enter first number:";
     cin >> num1;
