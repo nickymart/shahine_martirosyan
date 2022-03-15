@@ -1,9 +1,8 @@
 #include <iostream>
-#include "my_atoi/myatoi.h"
+#include "myatoi.h"
 using namespace std;
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
         int sum_my_atoi = 0;
         int sum_atoi = 0;
         for (int i = 1; i < argc; i++) {
