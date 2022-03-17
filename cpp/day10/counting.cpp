@@ -1,10 +1,12 @@
 #include <iostream>
 #include <math.h>
 #include <time.h>
+
 using namespace std;
 
 void get_month(int month);
 void counting(int, double, int);
+
 int main (int argc, char** argv) {
         int sum = atoi(argv[1]);
         double perc = atof(argv[2]);
@@ -25,7 +27,7 @@ void counting(int amount, double percent, int month) {
         cout << "The Result is  "  << amount << endl;
 }
 void get_month(int month) {
-    switch (month){
+    switch (month) {
         case 1:
             cout << "January";
             break;
