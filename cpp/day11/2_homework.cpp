@@ -22,10 +22,3 @@ int main()
         cout << "yes" << endl;    
     }
 }
-int count(int num) {
-    int i;
-    for(i = 0;num > 0; i++){
-        num /= 10;    
-    }    
-    return i;
-}
