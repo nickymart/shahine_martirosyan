@@ -1,67 +1,46 @@
 #include <iostream>
-#include <math.h>
-#include <time.h>
+#include <cstring>
+#include <ctime>
 
 using namespace std;
 
-void get_month(int month);
-void counting(int, double, int);
-
-int main (int argc, char** argv) {
-        int sum = atoi(argv[1]);
-        double perc = atof(argv[2]);
-        int month = atoi(argv[3]);
-        counting(sum, perc, month);
-        return 0;
-}
-void counting(int amount, double percent, int month) {
-        int difference = 0;
+int main(int argc, char* argv[]) {
         time_t now = time(0);
-        tm *ltm = localtime(&now);
-        for (int i = ltm->tm_mon; i < month + ltm->tm_mon; i++) { 
-                difference = amount * (percent / 100 / 12) ;
-                amount += amount * percent / 100;
-                get_month(i + ltm->tm_mon);
-                cout << ": " << amount << " " << difference << endl;
+        char *ltm = ctime(&now);
+        string date[5];
+        int x = 0;
+        for ( int i = 0; ltm[i] != '\0'; i++) {
+                if(ltm[i] == ' '){
+                        x++;
+                        continue;
+                }    
+                date[x] += ltm[i];    
         }
-        cout << "The Result is  "  << amount << endl;
-}
-void get_month(int month) {
-    switch (month) {
-        case 1:
-            cout << "January";
-            break;
-        case 2:
-            cout << "February";
-            break;
-        case 3:
-            cout << "March";
-            break;
-        case 4:
-            cout << "April";
-            break;
-        case 5:
-            cout << "May";
-            break;
-        case 6:
-            cout << "June";
-            break;
-        case 7:
-            cout << "July";
-            break;
-        case 8:
-            cout << "August";
-            break;
-        case 9:
-            cout << "September";
-            break;
-        case 10:
-            cout << "October";
-            break;
-        case 11:
-            cout << "November";
-            break;
-        default:
-            cout << "December";
-    }
+        int day = stoi(date[2]);
+        int year = stoi(date[4]);
+        string month[12] = {"Jan","Feb", "Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};  
+        int index;
+        for (index = 0; true; index++) {
+                if(date[1] == month[index]){
+                        break;
+                }
+        }
+        int amount = atof(argv[1]);
+        double percent = atof(argv[2]);
+        int m = atof(argv[3]);
+        int difference = 0;
+        int income = amount;
+        for (int i = 0; i < m + 1; i++) { 
+                if (month[index] == "Dec") {
+                        year++;
+                        index = 0;
+                }
+                difference = amount * (percent / 100 / 12) ;
+                amount += amount * percent / 100 / 12; 
+                cout << index +  2 << "/"  << day << "/" << year << "  "<< amount << "  " << difference << endl;
+                index ++; 
+        }
+        income = amount - income;
+        cout << "The Result is  "  << amount << " . And the income is " << income  << endl;
+        return 0;
 }
