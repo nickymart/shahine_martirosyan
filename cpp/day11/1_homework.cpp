@@ -3,8 +3,7 @@
 using namespace std;
 
 int count(int num);
-int main()
-{
+int main() {
     int num;
     cout << "Input number:";
     cin >> num;
@@ -12,7 +11,7 @@ int main()
     cout << "Input position to swap:";
     cin >> index1 >> index2;
     int c = count(num);
-    if(index1 > c || index2 > c || index1 <= 0 || index2 <= 0){
+    if(index1 > c || index2 > c || index1 <= 0 || index2 <= 0) {
         cout << "Error!";
         return 0;
     }
@@ -25,7 +24,7 @@ int main()
 }
 int count(int num) {
     int i;
-    for(i = 0;num > 0; i++){
+    for(i = 0;num > 0; i++) {
         num /= 10;    
     }    
     return i;
