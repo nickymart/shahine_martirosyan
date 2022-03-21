@@ -19,7 +19,7 @@ int main() {
     int elem2 = (int)(num / pow(10, c - index2)) % 10;
     num = num - elem2 * pow(10, c - index2) + elem1 * pow(10, c - index2);
     num = num - elem1 * pow(10, c - index1) + elem2 * pow(10, c - index1);
-    cout << num;
+    cout << num << endl;
     return 0;
 }
 int count(int num) {
