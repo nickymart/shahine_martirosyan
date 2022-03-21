@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
     int x1, x2, x3, x4;
     int y1, y2, y3, y4;
     cout << "Input:" << endl;
