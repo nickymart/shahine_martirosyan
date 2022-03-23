@@ -20,6 +20,7 @@ int main() {
 		i++;
 		text << correct_word(word) << " ";
 	}
+	text.close();
 	return 0;
 }
 string correct_word(string word) {
