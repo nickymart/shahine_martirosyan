@@ -10,16 +10,16 @@ int main() {
 	line += " ";
 	string word;
 	int i = 0;
-	cout << "Output: ";
+	ofstream text;
+	text.open("corrected.txt");
 	while(line[i] != '\0') {
 		word = "";
 		for(;line[i] != ' '; i++){
 			word += line[i];
 		}
 		i++;
-		cout << correct_word(word) << " ";
+		text << correct_word(word) << " ";
 	}
-	cout << endl;
 	return 0;
 }
 string correct_word(string word) {
