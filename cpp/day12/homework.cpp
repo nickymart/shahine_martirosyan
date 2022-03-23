@@ -5,10 +5,12 @@ using namespace std;
 string correct_word(string word);
 int main() {
 	string line;
+	cout << "Input: ";
 	getline(cin, line);
 	line += " ";
 	string word;
 	int i = 0;
+	cout << "Output: ";
 	while(line[i] != '\0') {
 		word = "";
 		for(;line[i] != ' '; i++){
@@ -17,6 +19,7 @@ int main() {
 		i++;
 		cout << correct_word(word) << " ";
 	}
+	cout << endl;
 	return 0;
 }
 string correct_word(string word) {
