@@ -1,0 +1,11 @@
+բարև hello
+լավ good
+դու you
+ես i
+նախադասություն sentence
+ֆայլ file
+բառ word
+օր day
+գրադարան library
+քանակ count
+ամիս month

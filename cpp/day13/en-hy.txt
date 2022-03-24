@@ -1,0 +1,11 @@
+hello բարև 
+good լավ 
+you դու
+i ես 
+sentence նախադասություն
+file ֆայլ 
+word բառ 
+day օր 
+library գրադարան 
+count քանակ 
+month ամիս 
