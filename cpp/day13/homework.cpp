@@ -50,24 +50,28 @@ string en_hy(string word) {
 	string t_word;
 	bool is_same = true;
 	string hy_word = "";
-	
+	string en_word;
 	while(!en_am.eof()){
+		en_word = "";
 		is_same = true;
 		getline(en_am, t_word);
-		int i;
-		
-		for(i = 0; word[i] != '\0'; i ++) {
-			if(t_word[i] != word[i]) {
-				is_same = false;
-				continue;
-			}
+		int i;	
+		for(i = 0; t_word[i] != ' '; i++){
+			en_word += t_word[i];
 		}
-		
-		if(is_same) {
-			for(i += 1; t_word[i] != '\0'; i++) {
-				hy_word += t_word[i];
+		if(en_word.size() == word.size()) {
+			for(i = 0; word[i] != '\0'; i ++) {
+				if(t_word[i] != word[i]) {
+					is_same = false;
+					continue;
+				}
+			}	
+			if(is_same) {
+				for(i += 1; t_word[i] != '\0'; i++) {
+					hy_word += t_word[i];
+				}
+				break;
 			}
-			break;
 		}
 	}
 	en_am.close();
@@ -81,26 +85,31 @@ string hy_en(string word) {
 	string t_word;
 	bool is_same = true;
 	string en_word = "";
-	
+	string hy_word;	
 	while(!am_en.eof()){
+		hy_word = "";
 		is_same = true;
 		getline(am_en, t_word);
 		int i;
-	
-		for(i = 0; word[i] != '\0'; i ++) {
-			if(t_word[i] != word[i]) {
-				is_same = false;
-				continue;
+		for(i = 0; t_word[i] != ' '; i++){
+                        hy_word += t_word[i];
+                }
+                if(hy_word.size() == word.size()) {
+			for(i = 0; word[i] != '\0'; i ++) {
+				if(t_word[i] != word[i]) {
+					is_same = false;
+					continue;
+				}
+			}	
+			if(is_same) {
+				for(i += 1; t_word[i] != '\0'; i++) {
+					en_word += t_word[i];
+				}
+				break;
 			}
-		}
-		
-		if(is_same) {
-			for(i += 1; t_word[i] != '\0'; i++) {
-				en_word += t_word[i];
-			}
-			break;
 		}
 	}
 	am_en.close();
 	return en_word;
 }
+
