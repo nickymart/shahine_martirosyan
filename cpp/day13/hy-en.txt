@@ -15,7 +15,6 @@
 կապույտ blue
 հավատալ believe
 սատանա demon
-սեվ black
 սպիտակ white
 բարձրությունը height
 լայնությունը width
