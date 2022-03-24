@@ -15,7 +15,6 @@ red կարմիր
 blue կապույտ
 believe հավատ
 demon սատանա
-black սև
 white սպիտակ
 height բարձրություն
 width լայնություն
