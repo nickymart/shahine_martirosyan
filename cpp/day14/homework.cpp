@@ -6,11 +6,11 @@ using namespace std;
 
 string deleteSameData(string s);
 bool getCommand();
-string fileCreate();
+string fileCreation();
 void writeNote(string);
 string getFileName(string);
 string getWeekDay(int);
-int dayofweek(int d, int m, int y);
+int dayOfWeek(int d, int m, int y);
 enum week{Sunday = 0, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday};
 struct diary {
         string note;
@@ -23,7 +23,7 @@ struct diary {
 } n;
 
 int main() {        
-	string s = fileCreate();
+	string s = fileCreation();
     string day = "";
     string month = "";
     string year = "";
@@ -37,7 +37,7 @@ int main() {
         day = s[i]; day += s[i + 1];
         month = s[i + 3]; month += s[i + 4];
         year = s[i + 6]; year += s[i + 7]; year += s[i + 8]; year += s[i + 9];
-        week = dayofweek(stoi(day), stoi(month), stoi(year));
+        week = dayOfWeek(stoi(day), stoi(month), stoi(year));
         w = getWeekDay(week);
         cout << w << " " << day + "/" + month + "/" + year + '\n'<< endl;
         file.open("./note/" + day + '_' + month + '_' + year + ".txt");
@@ -54,7 +54,7 @@ int main() {
     return 0;
 }
 
-string fileCreate() {
+string fileCreation() {
     bool b = true;
     string allNotesDay = "";
     while(b) {
@@ -111,7 +111,7 @@ string getWeekDay(int day){
 	}
 }
 
-int dayofweek(int d, int m, int y)
+int dayOfWeek(int d, int m, int y)
 {
     static int t[] = { 0, 3, 2, 5, 0, 3,
                        5, 1, 4, 6, 2, 4 };
