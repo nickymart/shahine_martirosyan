@@ -1,11 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <filesystem>
-namespace fs = std::filesystem;
 
 using namespace std;
 
+string deleteSameData(string s);
 bool getCommand();
 string fileCreate();
 void writeNote(string);
@@ -22,6 +21,7 @@ struct diary {
         }d;
 	week day;
 } n;
+
 int main() {        
 	string s = fileCreate();
     string day = "";
@@ -30,9 +30,11 @@ int main() {
     int week;
     string w;
     ifstream file;
-    cout << "List your notes.\n";
+    cout << "\nList your notes.\n\n";
     string text;
-    for(int i = 0; s[i] != '\0'; i += 11){
+    s = deleteSameData(s);
+    for(int i = 0; i < s.length(); i += 11){
+
         day = s[i]; day += s[i + 1];
         month = s[i + 3]; month += s[i + 4];
         year = s[i + 6]; year += s[i + 7]; year += s[i + 8]; year += s[i + 9];
@@ -42,14 +44,14 @@ int main() {
         file.open("./note/" + day + '_' + month + '_' + year + ".txt");
         while(!file.eof()) {
             getline(file, text);
-            cout << "Note:" << text << endl;
+            cout << "Note: " << text << endl;
         }
         file.close();
-        cout << w;
-
+        cout << endl;
     }
     return 0;
 }
+
 string fileCreate() {
     bool b = true;
     string allNotesDay = "";
@@ -134,4 +136,27 @@ bool getCommand() {
         return false;
     }
     return true;
+}
+
+string deleteSameData(string s){
+    bool b = false;
+    int j;
+    for(int i = 0; i < s.length() - 11; i += 11) {
+        for(j = i + 11; j < s.length(); j += 11) {
+            b = false;
+            for(int k = 0; k < 10; k ++){
+                if(s[i + k] != s[j + k]){
+                    cout << s[i + k] << s[j + k]<< " ";
+                    b = true;
+                }
+            }
+            cout << endl;
+        }
+        if(!b){
+            cout << "a\n";
+            s.erase(i, i + 11);
+            i = 0;
+        }
+    }
+    return s;
 }
