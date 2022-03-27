@@ -34,18 +34,20 @@ int main() {
     string text;
     s = deleteSameData(s);
     for(int i = 0; i < s.length(); i += 11){
-
         day = s[i]; day += s[i + 1];
         month = s[i + 3]; month += s[i + 4];
         year = s[i + 6]; year += s[i + 7]; year += s[i + 8]; year += s[i + 9];
         week = dayofweek(stoi(day), stoi(month), stoi(year));
         w = getWeekDay(week);
-        cout << w << " " << day + "/" + month + "/" + year << endl;
+        cout << w << " " << day + "/" + month + "/" + year + '\n'<< endl;
         file.open("./note/" + day + '_' + month + '_' + year + ".txt");
-        while(!file.eof()) {
+        while(!file.eof()){
             getline(file, text);
+            if(text == "") {
+                continue;
+            }
             cout << "Note: " << text << endl;
-        }
+        } 
         file.close();
         cout << endl;
     }
@@ -79,24 +81,14 @@ void writeNote(string s){
 }
 
 string getFileName(string data){
-    int elem = 0;
-	n.d.dd = "", n.d.mm = "", n.d.yyyy = ""; 
-       	for(int i = 0; data[i] != '\0'; i++) {
-	       	if(data[i] != '/' && elem == 0) {
-		       	n.d.dd += data[i];
-                        continue;
-		}else if(data[i] == '/'){
-			elem ++; 
-			i ++; 
-		}
-		if(data[i] != '/' && elem == 1) {
-			n.d.mm += data[i];
-			continue;
-		}
-		if(elem == 2){ 
-			n.d.yyyy += data[i];
-		}
-	}	
+    while(data[2] != '/' || data[5] != '/' || data.size() > 10){
+        cout << "Input dd/yy/yyyy:";
+        cin >> data;
+    }
+	n.d.dd = "", n.d.mm = "", n.d.yyyy = "";
+    n.d.dd += data[0]; n.d.dd += data[1]; 
+    n.d.mm += data[3]; n.d.mm += data[4];
+    n.d.yyyy += data[6]; n.d.yyyy += data[7]; n.d.yyyy += data[8]; n.d.yyyy += data[9];;
 	return "./note/" +  n.d.dd + '_' + n.d.mm + '_' + n.d.yyyy + ".txt";
 }
 
@@ -129,34 +121,39 @@ int dayofweek(int d, int m, int y)
 }
 
 bool getCommand() {
+    int elem = 0;
     string command;
-    cout << "Command:(add/exit)";
-    cin >> command;
-    if(command == "exit"){
-        return false;
-    }
+    do {
+        
+        cout << "Command:(add/exit)";
+        cin >> command;
+        if(command == "exit"){
+            return false;
+        }
+        if(command == "add"){
+            return true;
+        }
+    } while(elem == 0);
     return true;
 }
 
 string deleteSameData(string s){
-    bool b = false;
+    int b = 0;
     int j;
     for(int i = 0; i < s.length() - 11; i += 11) {
         for(j = i + 11; j < s.length(); j += 11) {
-            b = false;
+            b = 0;
             for(int k = 0; k < 10; k ++){
-                if(s[i + k] != s[j + k]){
-                    cout << s[i + k] << s[j + k]<< " ";
-                    b = true;
+                if(s[i + k] == s[j + k]){
+                    b ++;
                 }
             }
-            cout << endl;
-        }
-        if(!b){
-            cout << "a\n";
-            s.erase(i, i + 11);
-            i = 0;
-        }
+            if(b == 10){
+                s.erase(i, 11);
+                i = -11;
+                break;
+            }
+        }   
     }
     return s;
 }
