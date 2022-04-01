@@ -1,0 +1,8 @@
+BMW, 1000, 2000, 200000, 2, automatic, red
+Audi, 1000, 2000, 200000, 2, automatic, green
+Toyota, 2000, 3000, 1000, 3, mechanic, blue
+Mersedes Benz, 100, 200, 100, 4, automatic, black 
+Buggati, 3000000, 18000000, 0, 10, mechanic, white
+Toyota, 200, 3000, 1000, 3, mechanic, blue
+Mersedes Benz, 1000, 200, 100, 4, automatic, black 
+Buggati, 3000000, 1800000, 0, 10, mechanic, white
