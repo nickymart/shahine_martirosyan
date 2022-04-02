@@ -9,7 +9,8 @@ int arr[s];
 struct car {
     string Brand = "";
     string MotorVolume = "";
-    string Price = "";
+    string MinPrice = "";
+    string MaxPrice = "";
     string Mileage = "";
     string Color = "";
     string GearBox = "";
@@ -138,7 +139,7 @@ void filter(){
 
 void readData(){
     ifstream file;
-    file.open("cars.txt");
+    file.open("C:\\Users\\User\\Desktop\\shahine_martirosyan\\cpp\\day15\\cars.txt");
     int elem = 0;
     string line;
     int j = 0;
@@ -156,12 +157,14 @@ void readData(){
                 if(elem == 0){
                     c[j].Brand += line[i];
                 } else if(elem == 1){
-                    c[j].MotorVolume += line[i];
+                    c[j].MinPrice += line[i];
                 } else if(elem == 2){
-                    c[j].Price += line[i];
-                }  else if(elem == 3){
+                    c[j].MaxPrice += line[i];
+                } else if(elem == 3){
                     c[j].Mileage += line[i];
                 } else if(elem == 4){
+                    c[j].MotorVolume += line[i];
+                } else if(elem == 5){
                     c[j].GearBox += line[i];
                 } else {
                     c[j].Color += line[i];
@@ -178,7 +181,8 @@ void getInformation(int index) {
     cout << "        Brand           | " << c[index].Brand << endl;
     cout << "=============================================" << endl;
     cout << "        MotorVolume     | " << c[index].MotorVolume << endl;
-    cout << "        Price           | " << c[index].Price << endl;
+    cout << "        MinPrice        | " << c[index].MinPrice << endl;
+    cout << "        MaxPrice        | " << c[index].MaxPrice << endl;
     cout << "        Mileage         | " << c[index].Mileage << endl;
     cout << "        GearBox         | " << c[index].GearBox << endl;
     cout << "        Color           | " << c[index].Color << endl;
@@ -189,7 +193,7 @@ void getInformation(int index) {
 void filterPrice(int minPrice , int maxPrice){
     int j = 0;
     for(int i = 0; i < s; i ++) {
-        if(stoi(c[i].Price) < minPrice && stoi(c[i].Price) > maxPrice){
+        if(stoi(c[i].MinPrice) < minPrice && stoi(c[i].MaxPrice) > maxPrice){
             isExist(i);
         }
     }
@@ -203,6 +207,7 @@ void filterBrand(string brand) {
 }
 void filterColor(string color){
     for(int i = 0; i < s; i ++) {
+        cout << (color != c[i].Color) << endl;
         if(color != c[i].Color){
             isExist(i);
         }
@@ -232,7 +237,6 @@ void filterMotorVolume(int minMotorVolume, int maxMotorVolume){
         }
     }
 }
-
 void isExist(int i) {
     for(int j = 0; j < s; j++){
         if(arr[j] == i) {
@@ -240,7 +244,6 @@ void isExist(int i) {
         }
     }
 }
-
 void New(){
     for(int j = 0; j < s; j++){
         arr[j] = j;
