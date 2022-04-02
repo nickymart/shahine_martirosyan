@@ -139,7 +139,7 @@ void filter(){
 
 void readData(){
     ifstream file;
-    file.open("C:\\Users\\User\\Desktop\\shahine_martirosyan\\cpp\\day15\\cars.txt");
+    file.open("cars.txt");
     int elem = 0;
     string line;
     int j = 0;
