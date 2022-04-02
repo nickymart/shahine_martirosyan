@@ -12,9 +12,9 @@ struct country {
     string Country = "";
     string Capital = "";
     string Domain = "";
-    long long Population = 0;
-    long long Area = 0;
-    long long GDP = 0;
+    string Population = "";
+    string Area = "";
+    string GDP = "";
     PhoneCodes Code = Russia;
 
 } Data[5];
@@ -26,7 +26,7 @@ void searchFromDomain(string domain);
 void searching();
 void readData();
 void compare();
-char diff(long, long);
+char diff(string, string);
 int main(int argc, char** argv){
     readData();
     if (strcmp(argv[1], "search") == 0) {
@@ -111,10 +111,9 @@ void searchFromDomain(string domain){
 }
 void readData(){
     ifstream file;
-    file.open("C:\\Users\\User\\Desktop\\cpp\\day15\\countries.txt");
+    file.open("countries.txt");
     int elem = 0;
     string line;
-    string population = "", area = "",gdb = "";
     int j = 0;
     while(!file.eof()) {
         int i = 0;
@@ -131,20 +130,16 @@ void readData(){
                 } else if(elem == 2){
                     Data[j].Domain += line[i];
                 } else if(elem == 3){
-                    population += line[i];
+                    Data[j].Population += line[i];
                 } else if(elem == 4){
-                    area += line[i];
+                    Data[j].Area += line[i];
                 } else {
-                    gdb += line[i];
+                    Data[j].GDP += line[i];
                 }
             }
         }
-        Data[j].Population = stol(population);
-        Data[j].Area = stol(area);
-        Data[j].GDP = stol(gdb);
         Data[j].Code = getPhoneCode(Data[j].Country);
         j++;
-        population = "", area = "",gdb = "";
         elem = 0;
     }
     file.close();
@@ -157,10 +152,7 @@ void compare(){
     cout << "Input second country:";
     cin >> c2;
     int index1 = -1, index2= -1;
-    for(int i = 0;index1 == -1 || index2 == -1; i++){
-        if (i > 4){
-            return;
-        }
+    for(int i = 0; (index1 == -1 || index2 == -1) && i <= 4; i++){
         if(Data[i].Country == c1){
             index1 = i;
         }
@@ -175,14 +167,21 @@ void compare(){
     cout << " Domain     | " << Data[index1].Domain  << " | " << Data[index2].Domain << endl;
     cout << " Population | " << Data[index1].Population << " " << diff(Data[index1].Population, Data[index2].Population) << " " << Data[index2].Population << endl;
     cout << " Area       | " << Data[index1].Area << " " << diff(Data[index1].Area, Data[index2].Area) << " " << Data[index2].Area << endl;
-    cout << " GDB        | " << Data[index1].GDP << diff(Data[index1].GDP, Data[index2].GDP) << " " << Data[index2].GDP << endl;
+    cout << " GDP        | " << stol(Data[index1].GDP) << diff(Data[index1].GDP, Data[index2].GDP) << " " << stol( Data[index2].GDP) << endl;
     cout << " Phone Code | +" << Data[index1].Code << " | +" << Data[index2].Code << endl;
 }
-char diff(long num1, long num2){
-    if(num1 > num2){
+char diff(string num1,string num2){
+    if(num1.size() > num2.size()){
         return '>';
-    } else if(num1 < num2){
+    } else if(num1.size() < num2.size()){
         return '<';
     }
+	for(int i = 0; i < num1.size(); i++){
+		if(num1[i] > num2[i]){
+			return '>';
+		} else{
+			return '<';
+		}
+	}
     return '=';
 }
