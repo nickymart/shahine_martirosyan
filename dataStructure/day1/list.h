@@ -26,16 +26,14 @@ public:
   List();
 
   int _count = 0;
-  int operator [](int);
+  int getElement(int);
 
   void add(int, int);
   void add(int);
   void addFront(int);
   void remove(int);
   void removeAt(int);
-  int getElement(int);
   void display();
-
 
   bool isEmpty();
 };
