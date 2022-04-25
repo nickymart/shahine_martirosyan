@@ -1,18 +1,19 @@
 #include <iostream>
-#include "list.h"
+#include "list.hpp"
+
 using namespace std;
 
-
-int main(){
-  List temp;
+int main()
+{
+  List<int> temp;
   temp.add(8);
   temp.add(10);
   temp.add(20);
-  temp.add(25, 3);
+  temp.addByIndex(25, 3);
   temp.addFront(26);
-  temp.removeAt(0);
-  temp.remove(25);
+  temp.removeAt(1);
   temp.display();
-  cout << temp._count;
+  cout << temp.getCount() << endl;
+
   return 0;
 }
