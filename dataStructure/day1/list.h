@@ -26,7 +26,6 @@ public:
   List();
 
   int _count = 0;
-  int operator [](int);
 
   void add(int, int);
   void add(int);
