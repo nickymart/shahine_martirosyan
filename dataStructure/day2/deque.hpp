@@ -6,20 +6,19 @@
 template <typename T>
 class Deque
 {
-public:
+private:
   List<T> _list;
-  Deque(List<T>);
-
+public:
   void pushBack(T);
-  void popBack();
+  T popBack();
   void pushFront(T);
-  void popFront();
+  T popFront();
+  void display();
 };
 
 template <typename T>
-Deque<T>::Deque(List<T> list)
-{
-  _list = list;
+void Deque<T>::display(){
+  _list.display();
 }
 
 template <typename T>
@@ -29,9 +28,11 @@ void Deque<T>::pushBack(T new_data)
 }
 
 template <typename T>
-void Deque<T>::popBack()
+T Deque<T>::popBack()
 {
-  _list.removeAt(_list._count - 1);
+  T data = _list.getElement(_list.getCount() - 1);
+  _list.removeAt(_list.getCount() - 1);
+  return data;
 }
 
 template <typename T>
@@ -41,9 +42,11 @@ void Deque<T>::pushFront(T new_data)
 }
 
 template <typename T>
-void Deque<T>::popFront()
+T Deque<T>::popFront()
 {
+  T data = _list.getElement(_list.getCount() - 1);
   _list.removeAt(0);
+  return data;
 }
 
 #endif

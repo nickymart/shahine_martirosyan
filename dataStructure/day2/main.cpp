@@ -8,16 +8,13 @@ using namespace std;
 
 int main()
 {
-  List<int> temp;
-  temp.add(8);
-  temp.add(10);
-  temp.add(20);
-  temp.addByIndex(25, 3);
-  temp.addFront(26);
-  temp.removeAt(0);
+  Stack<int>* deque = new Stack<int>();
+  deque->push(5);
+  deque->push(21);
+  deque->pop();
+  deque->push(45);
+  cout << deque->peek();
+  deque->display();
 
-  Deque<int> *deque = new Deque<int>(temp);
-  deque->pushFront(5);
-  deque->_list.display();
   return 0;
 }

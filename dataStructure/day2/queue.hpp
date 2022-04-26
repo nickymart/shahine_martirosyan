@@ -6,19 +6,18 @@
 template <typename T>
 class Queue
 {
-public:
-  List<T> _list;
-  Queue(List<T>);
-
-  void pushFront(T);
-  T popBack();
-  T peek();
+  private:
+    List<T> _list;
+  public:
+    void pushFront(T);
+    void display();
+    T popBack();
+    T peek();
 };
 
 template <typename T>
-Queue<T>::Queue(List<T> list)
-{
-  _list = list;
+void Queue<T>::display(){
+  _list.display();
 }
 
 template <typename T>

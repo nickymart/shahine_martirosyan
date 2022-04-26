@@ -6,14 +6,20 @@
 template <typename T>
 class Stack
 {
-public:
+  private:
   List<T> _list;
-  Stack(List<T>);
 
-  void push(T);
-  T pop();
-  T peek();
+  public:
+    void push(T);
+    void display();
+    T pop();
+    T peek();
 };
+
+template <typename T>
+void Stack<T>::display(){
+  _list.display();
+}
 
 template <typename T>
 void Stack<T>::push(T new_data)
