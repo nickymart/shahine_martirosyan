@@ -17,7 +17,8 @@ class Stack
 };
 
 template <typename T>
-void Stack<T>::display(){
+void Stack<T>::display()
+{
   _list.display();
 }
 
