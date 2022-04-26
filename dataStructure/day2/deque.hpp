@@ -8,11 +8,14 @@ class Deque
 {
   private:
     List<T> _list;
+  
   public:
     void pushBack(T);
     T popBack();
+  
     void pushFront(T);
     T popFront();
+  
     void display();
 };
 
