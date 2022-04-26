@@ -8,6 +8,7 @@ class Queue
 {
   private:
     List<T> _list;
+  
   public:
     void pushFront(T);
     void display();
@@ -16,7 +17,8 @@ class Queue
 };
 
 template <typename T>
-void Queue<T>::display(){
+void Queue<T>::display()
+{
   _list.display();
 }
 
