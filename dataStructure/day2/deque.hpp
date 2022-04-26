@@ -6,18 +6,19 @@
 template <typename T>
 class Deque
 {
-private:
-  List<T> _list;
-public:
-  void pushBack(T);
-  T popBack();
-  void pushFront(T);
-  T popFront();
-  void display();
+  private:
+    List<T> _list;
+  public:
+    void pushBack(T);
+    T popBack();
+    void pushFront(T);
+    T popFront();
+    void display();
 };
 
 template <typename T>
-void Deque<T>::display(){
+void Deque<T>::display()
+{
   _list.display();
 }
 
