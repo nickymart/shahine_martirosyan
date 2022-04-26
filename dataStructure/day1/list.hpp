@@ -25,27 +25,26 @@ struct Node
 template <typename T>
 class List
 {
-private:
-  int _count = 0;
-  Node<T> *_head;
+  private:
+    int _count = 0;
+    Node<T> *_head;
 
-public:
-  List();
-  ~List();
+  public:
+    List();
+    ~List();
 
-  int getElement(int);
+    int getElement(int);
+    int getCount() const;
+  
+    void addByIndex(T, int);
+    void add(T);
+    void addFront(T);
+    void remove(T);
+    void removeAt(int);
+    void display();
+    void removeAll();
 
-  void addByIndex(T, int);
-  void add(T);
-  void addFront(T);
-  void remove(T);
-  void removeAt(int);
-  void display();
-  void removeAll();
-
-  bool isEmpty();
-
-  int getCount() const;
+    bool isEmpty();
 };
 
 template <typename T>
