@@ -1,7 +1,6 @@
 #ifndef TREE_H
 #define TREE_H
 
-#include <stdexcept>
 #include <iostream>
 
 using namespace std;
