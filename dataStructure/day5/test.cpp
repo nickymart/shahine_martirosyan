@@ -16,8 +16,6 @@ int main(){
     cout << max(tree, tree->_data) << endl;
     cout << min(tree, tree->_data) << endl;
     cout << sum(tree) << endl;
-    insert(tree, 20);
-    dfs(tree);
 
     return 0;
 }
