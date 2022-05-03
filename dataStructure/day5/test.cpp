@@ -5,17 +5,19 @@ using namespace std;
 
 int main(){
 
-    Tree* tree = new Tree(2);
+    Tree* tree = new Tree(1);
 
-    tree->_left_tree = new Tree(3);
-    tree->_right_tree = new Tree(4);
+    for (int i = 2; i < 32; i++) {
+        tree->insert(i);
+    }
 
-    tree->_left_tree->_left_tree = new Tree(5);
-    tree->_left_tree->_right_tree = new Tree(6);
+    cout << tree->sum() << endl;
+    cout << tree->max() << endl;
+    cout << tree->min() << endl;
 
-    cout << max(tree, tree->_data) << endl;
-    cout << min(tree, tree->_data) << endl;
-    cout << sum(tree) << endl;
+    tree->dfs();
+    cout << endl;
+    tree->bfs();
 
     return 0;
 }
