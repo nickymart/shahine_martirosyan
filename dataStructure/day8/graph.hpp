@@ -7,20 +7,19 @@
 using namespace std;
 
 class Graph {
-private:
-    vector<vector<int>> _adjMatrix;
+    private:
+        vector<vector<int>> _adjMatrix;
 
-public:
-    Graph(int);
-    void addVertex();
-    void printMatrix(); 
-    void addEdge(int, int);
-    void removeVertex(int);
-    void removeEdge(int, int);
-    void nodeNeighbours(int);
-    void nodeConnections(int);
-    bool isEdgeExist(int, int);
-
+    public:
+        Graph(int);
+        void addVertex();
+        void printMatrix(); 
+        void addEdge(int, int);
+        void removeVertex(int);
+        void removeEdge(int, int);
+        void nodeNeighbours(int);
+        void nodeConnections(int);
+        bool isEdgeExist(int, int);
 };
 
 bool Graph::isEdgeExist(int u, int v) {
@@ -28,12 +27,6 @@ bool Graph::isEdgeExist(int u, int v) {
 }
 
 void Graph::nodeConnections(int vertex) {
-    for (int i = 0; i < _adjMatrix.size(); i++) {
-        if (_adjMatrix[vertex][i] == 1) {
-            cout << i << " ";
-        }
-    }
-    cout << endl;
 }
 
 void Graph::nodeNeighbours(int vertex) {
