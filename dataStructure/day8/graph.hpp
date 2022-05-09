@@ -23,7 +23,7 @@ class Graph {
 };
 
 bool Graph::isEdgeExist(int u, int v) {
-    return _adjMatrix[u][v] == 1 || _adjMatrix[v][u] == 1;
+    return _adjMatrix[u][v] == 1 && _adjMatrix[v][u] == 1;
 }
 
 void Graph::nodeConnections(int vertex) {
