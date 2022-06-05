@@ -1,0 +1,27 @@
+db.school.insertOne({ name: "1 dproc", address: "Tumanyan 60", studentsCount: 600, coordinates: [39.823281, 46.752064], director: "Poxos Poxosyan", status: "mijnakarg"});
+db.school.insertOne({ name: "2 dproc", address: "Parsegov 02", studentsCount: 300, coordinates: [39.826814, 46.761187], director: "Petros Petrosyan", status: "avag"});
+db.school.insertOne({ name: "3 dproc", address: "Azatamartikneri 08", studentsCount: 320, coordinates: [39.818608, 46.754794], director: "Anna Arstamyan", status: "mijnakarg" });
+db.school.insertOne({ name: "4 dproc", address: "Mkhitar Gosh 8", studentsCount: 200, coordinates: [39.823800, 46.769593], director: "Vahan Minasyan", status: "mijnakarg" });
+db.school.insertOne({ name: "5 dproc", address: "Isakov 10", studentsCount: 250, coordinates: [39.811167, 46.751128], director: "Grigor Grigoryan", status: "avag" });
+
+1)
+db.school.find();
+2)
+db.school.find({}, { name: 1, address: 1, _id: 0 });
+3)
+db.school.find().sort({ studentsCount: 1 });
+4)
+db.school.find({ status: "avag" }, { _id: 0 });
+5)
+db.school.find({ status: "mijnakarg" }, { _id: 0 }).limit(3);
+6)
+db.school.find({
+  coordinates: {
+    $near: {
+      $geometry: {
+        type: "Point" ,
+        coordinates: [39.825152, 46.762802]
+      },
+    },
+  },
+}).limit(1);
