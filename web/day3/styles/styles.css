@@ -83,7 +83,7 @@ header>img {
     cursor: pointer;
 }
 
-section.about {
+.about {
     display: flex;
     justify-content: center;
     padding: 30px 0px 20px;
