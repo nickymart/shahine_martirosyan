@@ -81,9 +81,6 @@ header>img {
     color: white;
     cursor: pointer;
 }
-.navbar a:hover {
-    color: rgb(139, 124, 124);
-}
 
 section.about {
     display: flex;
@@ -96,16 +93,6 @@ section.about {
     top: 90vh;
 }
 
-.about p {
-    font-family: "Open Sans";
-    font-style: normal;
-    font-size: 110%;
-    line-height: 162.68%;
-    text-align: center;
-    color: black;
-    margin: 0px 15%;
-}
-
 .about h2 {
     font-family: Anton;
     font-style: normal;
@@ -114,6 +101,16 @@ section.about {
     text-transform: uppercase;
     color: black;
     margin: 115px 0px 20px;
+}
+
+.about p {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-size: 110%;
+    line-height: 162.68%;
+    text-align: center;
+    color: black;
+    margin: 0px 15%;
 }
 
 .text1,
