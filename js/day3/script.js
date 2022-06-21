@@ -39,10 +39,6 @@ console.log(bonus);
 
 // 5
 
-let cities = new Set();
-
-for(const i in employeesDataArray) cities.add(employeesDataArray[i].contact[0]);
-
 const numberEmployeesByCity = new Object();
 for (let i in employeesDataArray) {
   if(numberEmployeesByCity.hasOwnProperty(employeesDataArray[i].contact[0]))
