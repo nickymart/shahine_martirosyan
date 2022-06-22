@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+    body > div {
+        width: 210px;
+    }
+    .result,
+    .actions,
+    .reset {
+        width: 200px;
+    }
+    .numbers {
+        width: 200px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .numbers > input {
+        width: 190px;
+    }
+    .numbers > h1 {
+        text-align: center;
+        width: 190px;
+    }
+
+}
