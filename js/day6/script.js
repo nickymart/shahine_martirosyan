@@ -28,7 +28,7 @@ const ok = () => {
             document.querySelector('#score').innerText = highScore;
             sessionStorage.setItem('highScore', JSON.stringify(highScore));
         }
-        div.innerHTML = '<h1 style="color:green;">You Won!</h1>'
+        div.innerHTML = '<h1 style="color:green;">You Win!</h1>'
     } else {
         if(Number(count.innerText) === 1 || Number(count.innerText) === 0){
             count.innerHTML = 0;
@@ -37,9 +37,9 @@ const ok = () => {
             count.innerHTML = Number(count.innerText) - 1;
             if(Number(input.value) > randomNumber){
                 if(Number(input.value) - randomNumber < 10){
-                    div.innerHTML = '<h1 style="color:green;">It is large!</h1>';
+                    div.innerHTML = '<h1 style="color:green;">It is high!</h1>';
                 } else {
-                    div.innerHTML = '<h1 style="color:red;">It is very large!</h1>';
+                    div.innerHTML = '<h1 style="color:red;">It is very high!</h1>';
                 }
             } else {
                 if(randomNumber - Number(input.value) < 10){
