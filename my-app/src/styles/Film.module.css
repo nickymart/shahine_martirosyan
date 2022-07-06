@@ -1,0 +1,28 @@
+.Film {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: 280px;
+    border: 1px solid rgb(0, 0, 0);
+    text-align: center;
+}
+
+.Film > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Film button,
+.linkGoTo {
+    margin: 2px;
+    background-color: white;
+    width: 25%;
+    text-decoration: none;
+    color: black;
+    font-family: monospace;
+    border: 1px solid;
+    padding: 3px;
+}

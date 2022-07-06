@@ -1,0 +1,12 @@
+.HomePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    height: 84vh;
+    background-color: white;
+}
+
+.HomePage h1 {
+    color: black;
+}

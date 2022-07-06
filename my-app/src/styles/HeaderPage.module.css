@@ -1,0 +1,20 @@
+.header {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    align-items: center;
+    height: 100px;
+    background-color: rgba(226, 226, 226, 0.514);
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+
+/* .active{
+    color: var(--color-active);
+    cursor: default;
+} */
